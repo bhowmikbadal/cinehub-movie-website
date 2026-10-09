@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Discover movies, explore genres, read movie details, and find official trailers with CineHub.">
+  <meta name="theme-color" content="#101018">
+  <title>CineHub — Discover Your Next Movie</title>
+  <link rel="canonical" href="https://example.com/">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"CineHub","url":"https://example.com/","potentialAction":{"@type":"SearchAction","target":"https://example.com/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="./" aria-label="CineHub home"><span class="brand-mark">C</span>Cine<span>Hub</span></a>
+  <nav aria-label="Main navigation"><a href="#trending">Trending</a><a href="#popular">Popular</a><a href="#about">About</a></nav>
+  <button id="theme-toggle" class="icon-button" aria-label="Toggle color theme">☼</button>
+</header>
+<main>
+  <section class="hero">
+    <div class="hero-copy">
+      <p class="eyebrow">YOUR NEXT MOVIE NIGHT STARTS HERE</p>
+      <h1>Find a story<br><span>worth watching.</span></h1>
+      <p class="hero-description">Explore movie details, discover genres, and find official trailers. No pirated streams—just a better movie guide.</p>
+      <form id="search-form" class="search-form" role="search">
+        <label class="sr-only" for="search-input">Search movies</label>
+        <input id="search-input" name="q" type="search" placeholder="Search a movie…" autocomplete="off">
+        <button type="submit">Search <span aria-hidden="true">↗</span></button>
+      </form>
+      <p class="small-note">Try “Dune”, “Spider-Man”, or “The Batman”.</p>
+    </div>
+    <div class="hero-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div><div class="poster-stack"><span>✦</span><b>STORIES<br>ON SCREEN</b><small>DISCOVER SOMETHING NEW</small></div></div>
+  </section>
+
+  <div class="ad-slot ad-top" data-ad-slot="top" aria-label="Advertisement">
+    <span>Advertisement</span><small>Ad space — activates only after publisher approval and valid ad configuration.</small>
+  </div>
+
+  <section class="section" id="search-results" hidden>
+    <div class="section-heading"><div><p class="eyebrow">YOUR SEARCH</p><h2 id="search-title">Search results</h2></div></div>
+    <div class="movie-grid" id="search-grid"></div>
+  </section>
+  <section class="section" id="trending">
+    <div class="section-heading"><div><p class="eyebrow">WHAT PEOPLE ARE EXPLORING</p><h2>Trending this week</h2></div><span class="section-tag">TRENDING</span></div>
+    <div id="trending-grid" class="movie-grid"></div>
+  </section>
+  <div class="ad-slot ad-mid" data-ad-slot="mid" aria-label="Advertisement">
+    <span>Advertisement</span><small>Ad space — no ads are served in demo mode.</small>
+  </div>
+  <section class="section" id="popular">
+    <div class="section-heading"><div><p class="eyebrow">FAN FAVOURITES</p><h2>Popular movies</h2></div><span class="section-tag">POPULAR</span></div>
+    <div id="popular-grid" class="movie-grid"></div>
+    <button id="load-more" class="secondary-button">Load more movies <span>＋</span></button>
+  </section>
+  <section class="about-panel" id="about">
+    <div><p class="eyebrow">MADE FOR MOVIE FANS</p><h2>Good stories.<br><span>Better discoveries.</span></h2></div>
+    <div><p>CineHub is a movie discovery and information project. It helps visitors explore titles, genres, ratings, and official trailer links. We do not host or provide unauthorized copies of copyrighted films.</p><a class="text-link" href="about.html">Learn about CineHub ↗</a></div>
+  </section>
+  <section class="section editorial-section">
+    <div class="section-heading"><div><p class="eyebrow">EDITORIAL</p><h2>More than a poster</h2></div></div>
+    <div class="editorial-grid">
+      <article><span class="editorial-icon">✎</span><h3>Write original reviews</h3><p>Add your own opinions, analysis, and recommendations to make every page useful—not just a feed of API data.</p></article>
+      <article><span class="editorial-icon">⌕</span><h3>Help fans choose</h3><p>Explain who a film is for, its tone, and what makes it worth watching. Link to legal viewing services where available.</p></article>
+      <article><span class="editorial-icon">↗</span><h3>Publish responsibly</h3><p>Use properly licensed data, images, trailers, and advertising. Read the setup guide before launching commercially.</p></article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <a class="brand" href="./"><span class="brand-mark">C</span>Cine<span>Hub</span></a>
+  <p>Movie discovery, not movie hosting.</p>
+  <div class="footer-links"><a href="about.html">About</a><a href="privacy.html">Privacy</a><a href="terms.html">Terms</a><a href="contact.html">Contact</a></div>
+  <p class="copyright">© <span id="year"></span> CineHub. Replace this demo brand and example.com before launch.</p>
+  <p id="attribution" class="attribution">Demo data is shown until a permitted API provider is configured.</p>
+</footer>
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="movie-dialog" class="movie-dialog">
+  <button class="dialog-close" id="dialog-close" aria-label="Close details">×</button>
+  <div id="dialog-content"></div>
+</dialog>
+<script src="app.js" defer></script>
+</body>
+</html>
